@@ -142,7 +142,7 @@ input, select, textarea {
 
 		}
 
-	body, input, select, textarea {
+	body, input, select, textarea, p {
 		color: #ffffff;
 		font-family: "Source Sans Pro", sans-serif;
 		font-weight: 300;
@@ -1714,4 +1714,50 @@ input, select, textarea {
 	background-size: 3.4rem;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+.container {
+	padding: 30px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.activity {
+	padding: 30px;
+	border: 3px solid slategray;
+	width: 70%;
+	margin-left: 50%;
+	transform: translate(-50%);
+	border-radius: 10px;
+}
+
+.question {
+	color: steelblue;
+}
+
+.number {
+	font-size: 17px;
+}
+
+.answer {
+	border-radius: 10px;
+	padding: 10px;
+	color: black;
+	background-color: teal;
+	opacity: 0.7;
+	margin-bottom: 0;
+}
+
+.answer_ul {
+	border: 3px solid white;
+	background-color: teal;
+	border-radius: 10px;
+	opacity: 0.7;
+	color: black;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
