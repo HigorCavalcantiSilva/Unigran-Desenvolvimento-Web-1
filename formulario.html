@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Aula 05 - Formulário</title>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+        <a href="./">
+            <div class="back"></div>
+        </a>                
+        
+        <div class="container">
+            
+            <h3>FORMULÁRIO - CADASTRO DE CLIENTES</h3>
+
+            <form action="./envia.html" method="GET">
+            
+                <label for="nome">
+                    NOME
+                </label>
+                <input id="nome" type="text" required>
+                <br>
+                <label for="email">
+                    EMAIL
+                </label>
+                <input type="email" id="email" required>
+                <br>
+                <label for="idade">
+                    IDADE
+                </label>
+                <input type="number" id="idade" required>
+
+                <button class="btn" type="button">VOLTAR</button>
+                <button class="btn" type="reset">LIMPAR</button>
+                <button style="color: black !important; background-color: white;" type="submit">ENVIAR</button>
+            </form>
+            
+        </div>
+
+	</body>
+</html>
