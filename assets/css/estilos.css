@@ -1,0 +1,22 @@
+.estilo_dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.estilo_dropdown_content {
+    display: none;
+    background-color: black;
+    position: absolute;
+}
+
+.estilo_dropbtn {
+    font-size: 8px;
+}
+
+.estilo_dropdown:hover {
+    background-color: red;
+}
+
+.estilo_dropdown:hover .estilo_dropdown_content {
+    display: block;
+}
