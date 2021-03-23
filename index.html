@@ -10,8 +10,10 @@
 	</head>
 	<body class="is-preload">
 
+		<h2 id="date_time" class="text-center"></h2>
+		
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
 				<!-- Header -->
 					<header id="header">
@@ -35,7 +37,7 @@
 									<a href="./formulario.html">Aula 5</a>
 									<a href="./audio_video.html">Aula 6</a>
 									<a href="./aula7.html">Aula 7</a>
-									<a href="#">Aula 8</a>
+									<a href="./formulario_js.html">Aula 8</a>
                                     <a href="./sobre.html">Sobre</a>
 								</div>
 								</div>		
@@ -46,7 +48,7 @@
 								<li><a href="./formulario.html">Aula 5</a></li>
 								<li><a href="./audio_video.html">Aula 6</a></li>
 								<li><a href="./aula7.html">Aula 7</a></li>
-								<li><a href="#">Aula 8</a></li>
+								<li><a href="./formulario_js.html">Aula 8</a></li>
                                 <li><a href="./sobre.html">Sobre</a></li>								
 							</ul>
 						</nav>
@@ -77,6 +79,36 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script type="text/javascript">
+
+				function exibirDataHora(){
+
+					setInterval(() => {
+	
+						let dtt = new Date()
+	
+						let data = ((dtt.getDate() < 10) ? '0' + (dtt.getDate()) : (dtt.getDate()))
+							+ "/" + 
+							((dtt.getMonth()+1 < 10) ? '0' + (dtt.getMonth()+1) : (dtt.getMonth()+1))
+							+ "/" + 
+							dtt.getFullYear();
+	
+						let hora = ((dtt.getHours() < 10) ? '0' + (dtt.getHours() ) : dtt.getHours())
+							+ ":" + 
+							((dtt.getMinutes() < 10) ? '0' + (dtt.getMinutes() ) : dtt.getMinutes())
+							+ ":" + 
+							((dtt.getSeconds() < 10) ? '0' + (dtt.getSeconds() ) : dtt.getSeconds())
+	
+						document.getElementById('date_time').innerText = data + ' | ' + hora;
+	
+					}, 1000)
+
+				}
+
+				exibirDataHora()
+
+			</script>
 
 	</body>
 </html>

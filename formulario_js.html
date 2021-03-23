@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Aula 08 - Javascript</title>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+        <a href="./">
+            <div class="back"></div>
+        </a>                
+        
+        <div class="container">
+            
+            <h3>FORMULÁRIO - CADASTRO DE CLIENTES</h3>
+
+            <form name="cadastro" method="POST">
+            
+                <label for="nome">
+                    NOME
+                </label>
+                <input class="field" name="nome">
+                <br>
+                <label for="email">
+                    EMAIL
+                </label>
+                <input class="field" name="email">
+                <br>
+                <label for="idade">
+                    IDADE
+                </label>
+                <input class="field" name="idade" oninput="validarIdade()">
+
+                <input class="btn" type="button" value="VOLTAR" onclick="javascript:history.back()">
+                <input class="btn" type="reset" value="LIMPAR">
+                <input style="color: black !important; background-color: white;" onclick="validarCampos()" type="button" value="ENVIAR">
+            </form>
+            
+        </div>
+
+        <script type="text/javascript">
+
+            document.cadastro.idade.addEventListener('paste', (evt) => {
+                let caracteres = (evt.clipboardData || window.clipboardData).getData('text')
+                if(isNaN(parseInt(caracteres))){
+                    evt.preventDefault()
+                }
+            })
+
+            function validarCampos(){
+
+                if(naoTemNome()){
+
+                    return
+
+                }
+
+                if(naoTemEmail()){
+
+                    return
+
+                } else {
+
+                    if(validarEmail()){
+
+                        return
+
+                    }
+                }
+
+                if(naoTemIdade()){
+
+                    return
+
+                } else {
+
+                    if(validarIdade()){
+
+                        return
+
+                    }
+                }
+
+                alert('Formulário validado com Sucesso!!')
+                
+            }
+
+            function naoTemNome(){
+                if(document.cadastro.nome.value == ''){
+                    alert('Preencha o campo NOME')
+                    return true
+                }
+            }
+
+            function naoTemEmail(){
+                if(document.cadastro.email.value == ''){
+                    alert('Preencha o campo EMAIL')
+                    return true
+                }
+            }
+
+            function validarEmail(){
+                if(document.cadastro.email.value.indexOf('@') == -1 || --document.cadastro.email.value.length == document.cadastro.email.value.indexOf('@')){
+                    alert('EMAIL no formato incorreto!')
+                    return true
+                }
+            }
+
+            function naoTemIdade(){
+                if(document.cadastro.idade.value == ''){
+                    alert('Preencha o campo IDADE')
+                    return true
+                }
+            }
+
+            function validarIdade(){
+                let idade = document.cadastro.idade.value
+                if(isNaN(parseInt(idade[--idade.length]))) {
+                    document.cadastro.idade.value = document.cadastro.idade.value.substring(0, --idade.length)
+                    return true
+                }
+            }
+        </script>
+
+	</body>
+</html>
